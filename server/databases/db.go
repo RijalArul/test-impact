@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"test-impact/server/models/entities"
 
 	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
@@ -35,7 +36,7 @@ func StartDB() {
 		panic(err)
 	}
 
-	// DB.AutoMigrate(&entities.Member{}, &entities.Product{}, &entities.ReviewProduct{}, &entities.LikeReview{})
+	DB.AutoMigrate(&entities.Product{})
 
 }
 
